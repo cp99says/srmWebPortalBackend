@@ -10,7 +10,7 @@ app.use('/socp',socp)
 //   app.use('/soce')
 //   app.use('/soaid')
 //   app.use('/some')
-app.use('/faculty_details',faculty_details)
+app.use('/details',faculty_details)
 
 
 
