@@ -1,7 +1,14 @@
 const mongoose=require('mongoose')
 
+var date=new Date()
+var a=date.toDateString()
 
 const studentDetails_schema=mongoose.Schema({
+    date:{
+      type:String,      
+      default:a,
+      required:true
+    },
     ug1:{
         type:Number,
         required:true
@@ -37,8 +44,8 @@ const studentDetails_schema=mongoose.Schema({
     phdf:{
         type:Number,
         required:true
-    },
+    }
 
 
 })
-module.exports=mongoose.model('Student_Details',studentDetails_schema)
+module.exports=mongoose.model('Student_Details_socp_cse',studentDetails_schema)

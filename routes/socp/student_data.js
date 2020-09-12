@@ -1,10 +1,9 @@
 const express=require('express')
 const app=express()
-const studDet=require('../models/userDefined/student_details')
+const studDet=require('../../models/userDefined/studentDetails_socp_cse')
 
 app.post('/student_details', async (req,res)=>{
-    try{
-        const sd=await studDet.create(req.body)
+    try{        
         const ug1=req.body.ug1
         const ug2=req.body.ug2
         const ug3=req.body.ug3
@@ -18,6 +17,8 @@ app.post('/student_details', async (req,res)=>{
         const totalPG=pg1+pg2
         const totalPhd=phdi+phde+phdf
         const totalStudents=totalPG+totalUG+totalPhd
+
+        const sd=await studDet.create(req.body)
         console.log(totalStudents)
         res.status(201).json({
             message:'success',
