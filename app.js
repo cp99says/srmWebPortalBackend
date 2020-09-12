@@ -12,7 +12,7 @@ const cors=require('cors')
 
  mongoose.connect(`mongodb+srv://chetan_db:chetan_pwd@cluster0.gcabm.mongodb.net/srm?retryWrites=true&w=majority`,{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{console.log(`db connected`)}).catch((err)=>{
      console.log(err)
-     
+
  })
 
 app.use(express.json())
@@ -27,4 +27,7 @@ app.use('/ktr',student_data)
 
 
 const port=process.env.PORT || 3000
-app.listen(port,'127.0.0.1',()=>{console.log(`server started at port : ${port}`)})
+app.listen(port,(()=>{console.log(`server started at port : ${port}`)}))
+
+// const port = process.env.PORT || 3500
+// app.listen(port, (() => { console.log('server started at port 3500') }))
