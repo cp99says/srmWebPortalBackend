@@ -48,4 +48,4 @@ const studentDetails_schema=mongoose.Schema({
 
 
 })
-module.exports=mongoose.model('Student_Details_socp_cse',studentDetails_schema)
+module.exports=mongoose.model('ktr_Student_Details_socp_cse',studentDetails_schema)

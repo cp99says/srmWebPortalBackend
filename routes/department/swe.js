@@ -1,7 +1,7 @@
 const express=require('express')
 const app=express()
 const swe_schema=require('../../models/userDefined/studentDetails_socp_swe')
-
+const facultySchema=require('../../models/userDefined/ktr_facultyDetails_socp_swe')
 app.post('/student_details', async (req,res)=>{
     try{        
         const ug1=req.body.ug1
@@ -53,6 +53,43 @@ app.get('/student_details', async (req,res)=>{
         })
     }
     
+})
+
+app.post('/faculty_details', async (req,res)=>{
+    try{
+        const data=await facultySchema.create(req.body)
+        res.status(201).json({
+            message:'success',
+            data
+        })
+    }    
+    catch(err){
+        console.log(err)
+        res.status(401).json({
+            message:'failure',
+            err
+        })
+    }
+
+})
+
+app.get('/faculty_details', async (req,res)=>{
+    try{
+        const data=await facultySchema.find()
+        res.status(201).json({
+            message:'success',
+            data
+        })
+    }
+    catch(err){
+        console.log(err)
+        res.status(401).json({
+            message:'failure',
+            err
+        })
+    }
+    
+
 })
 
 

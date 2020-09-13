@@ -4,13 +4,13 @@ const campus=require('../models/predefined/campus')
 const schools=require('../models/predefined/schools')
 const dept=require('../models/predefined/dept')
 const socp=require('./department/checkDepartment')
-const faculty_details=require('../routes/faculty/faculty_details')
+//const faculty_details=require('../routes/faculty/faculty_details_cse')
 
 app.use('/socp',socp)
 //   app.use('/soce')
 //   app.use('/soaid')
 //   app.use('/some')
-app.use('/details',faculty_details)
+//app.use('/details',faculty_details)
 
 
 

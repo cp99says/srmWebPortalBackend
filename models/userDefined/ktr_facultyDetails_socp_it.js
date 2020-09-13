@@ -1,7 +1,13 @@
 const mongoose=require('mongoose')
-
+var date=new Date()
+var a=date.toDateString()
 
 const ktr_facultyDetailsSchema=mongoose.Schema({
+    date:{
+        type:String,      
+        default:a,
+        required:true
+      },
     af:{
         type:Number,
         required:true
@@ -24,4 +30,4 @@ const ktr_facultyDetailsSchema=mongoose.Schema({
     }
 })
 
-module.exports=mongoose.model('ktr_faculty_Details',ktr_facultyDetailsSchema)
+module.exports=mongoose.model('ktr_faculty_Details_socp_it',ktr_facultyDetailsSchema)
