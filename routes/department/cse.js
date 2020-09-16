@@ -127,13 +127,13 @@ app.get('/placement_details', async (req,res)=>{
     try{
         const data= await cse_placement.find()
         const data2=await campus.find({"campus_code":"1"}, (err,doc)=>{
-            //console.log(doc)
+           // console.log(doc)
         })
         const data3=await dept.find({"dept_code":"1"},(err,doc)=>{
-            console.log(doc)
+           // console.log(doc)
         })
         const data4=await school.find({"school_code":"7"},(err,doc)=>{
-            console.log(doc)
+           // console.log(doc)
         })
         res.status(201).json({
             message:'success',
@@ -144,7 +144,7 @@ app.get('/placement_details', async (req,res)=>{
         })
     }
     catch(err){
-        console.log(err)
+        //console.log(err)
         res.status(401).json({
             message:'failure',
             err
@@ -328,11 +328,7 @@ app.get('/project_details', async (req,res)=>{
             message:'failure',
             err
         })
-    }
-    
+    }  
 
 })
-
-
-
 module.exports=app
