@@ -1,6 +1,16 @@
 const mongosose=require('mongoose')
 
+
+var date=new Date()
+var a=date.toDateString()
+
 const patent=mongosose.Schema({
+
+    date:{
+        type:String,      
+        default:a,
+        required:true
+      },
     patents_filed:{
         type:Number,
         required:true

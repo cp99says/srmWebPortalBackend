@@ -1,6 +1,15 @@
 const mongoose=require('mongoose')
 
+
+var date=new Date()
+var a=date.toDateString()
+
 const projectSchema=mongoose.Schema({
+    date:{
+        type:String,      
+        default:a,
+        required:true
+      },
     projects_applied:{
         type:Number,
         required:true

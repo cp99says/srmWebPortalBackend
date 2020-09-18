@@ -1,7 +1,15 @@
 const mongoose=require('mongoose')
 
 
+var date=new Date()
+var a=date.toDateString()
+
 const schema=mongoose.Schema({
+    date:{
+        type:String,      
+        default:a,
+        required:true
+      },
         month:{
             type:String,
             required:true

@@ -1,6 +1,14 @@
 const mongoose=require('mongoose')
 
+var date=new Date()
+var a=date.toDateString()
+
 const visDetails=mongoose.Schema({
+    date:{
+        type:String,      
+        default:a,
+        required:true
+      },
     visName:{
         type:String,
         required:true
