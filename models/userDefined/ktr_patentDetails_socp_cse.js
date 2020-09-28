@@ -6,8 +6,7 @@ var a=date.toDateString()
 
 const patent=mongosose.Schema({
 
-    date:{
-        type:String,      
+    date:{type:String,      
         default:a,
         required:true
       },
@@ -22,15 +21,8 @@ const patent=mongosose.Schema({
     patents_granted:{
         type:Number,
         required:true
-    },
-    month:{
-        type:String,
-        required:true
-    },
-    year:{
-        type:Number,
-        required:true
     }
+    
 })
 
 module.exports=mongosose.model('ktr_patent_details_socp_cse',patent)

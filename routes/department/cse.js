@@ -10,6 +10,8 @@ const higher_studies=require('./../../models/userDefined/ktr_higher_Studies_socp
 const visitor_details=require('./../../models/userDefined/ktr_visitorDetails_socp_cse')
 const patent=require('./../../models/userDefined/ktr_patentDetails_socp_cse')
 const project=require('./../../models/userDefined/ktr_project_details_socp_cse')
+const publication=require('./../../models/userDefined/ktr_publicationDetails_socp_cse')
+const student_activity=require('./../../models/userDefined/ktr_studentActivities_socp_cse')
 
 app.post('/student_details', async (req,res)=>{
     try{        
@@ -330,5 +332,95 @@ app.get('/project_details', async (req,res)=>{
         })
     }  
 
+})
+
+app.post('/publication_details', async (req,res)=>{
+    try{
+        const data=await publication.create(req.body)
+        res.status(201).json({
+          message:'success',
+          data
+      })
+  }
+      catch(err){
+          res.status(401).json({
+              message:'failure',
+              err
+          })
+      }
+})
+
+app.get('/publication_details', async (req,res)=>{
+    try{
+        const data=await publication.find()
+        const data2=await campus.find({"campus_code":"1"}, (err,doc)=>{
+            //console.log(doc)
+        })
+        const data3=await dept.find({"dept_code":"1"},(err,doc)=>{
+            //console.log(doc)
+        })
+        const data4=await school.find({"school_code":"7"},(err,doc)=>{
+            //console.log(doc)
+        })
+        res.status(201).json({
+            message:'success',
+            data,
+            data2,
+            data3,
+            data4
+        })
+        
+    }
+    catch(err){
+        res.status(401).json({
+            message:'failure',
+            err
+        })
+    }  
+})
+
+app.post('/student_activities', async (req,res)=>{
+    try{
+        const data=await student_activity.create(req.body)
+        res.status(201).json({
+          message:'success',
+          data
+      })
+  }
+      catch(err){
+          res.status(401).json({
+              message:'failure',
+              err
+          })
+      }
+})
+
+app.get('/student_activities', async (req,res)=>{
+    try{
+        const data=await student_activity.find()
+        const data2=await campus.find({"campus_code":"1"}, (err,doc)=>{
+            //console.log(doc)
+        })
+        const data3=await dept.find({"dept_code":"1"},(err,doc)=>{
+            //console.log(doc)
+        })
+        const data4=await school.find({"school_code":"7"},(err,doc)=>{
+            //console.log(doc)
+        })
+        res.status(201).json({
+            message:'success',
+            data,
+            data2,
+            data3,
+            data4
+        })
+        
+    }
+    catch(err){
+        res.status(401).json({
+            message:'failure',
+            err
+        })
+    }  
 })
 module.exports=app

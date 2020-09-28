@@ -9,25 +9,17 @@ const visDetails=mongoose.Schema({
         default:a,
         required:true
       },
-    visName:{
-        type:String,
-        required:true
+    foreign_professors:{
+        visited_campus:{type:Number,required:true},
+        online:{type:Number,required:true}
     },
-    organisation:{
-        type:String,
-        required:true
+    alumni:{
+        visited_campus:{type:Number,required:true},
+        online:{type:Number,required:true}
     },
-    iaao:{
-        type:String,
-        required:true
-    },
-    date_of_visit:{
-        type:String,
-        required:true
-    },
-    purpose_of_visit:{
-        type:String,
-        required:true
+    industrialists:{
+        visited_campus:{type:Number,required:true},
+        online:{type:Number,required:true}
     }
 })
 
