@@ -396,7 +396,7 @@ app.post('/student_activities', async (req,res)=>{
       }
 })
 
-app.get('/student_activities', verify, async (req,res)=>{
+app.get('/student_activities', async (req,res)=>{
     try{
         const data=await student_activity.find()
         const data2=await campus.find({"campus_code":"1"}, (err,doc)=>{
