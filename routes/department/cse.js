@@ -12,9 +12,10 @@ const patent=require('./../../models/userDefined/ktr_patentDetails_socp_cse')
 const project=require('./../../models/userDefined/ktr_project_details_socp_cse')
 const publication=require('./../../models/userDefined/ktr_publicationDetails_socp_cse')
 const student_activity=require('./../../models/userDefined/ktr_studentActivities_socp_cse')
-const verify=require('./../../routes/verifyToken')
+const verify_get=require('./../../routes/ktr_socp_get')
+const verify_post=require('./../../routes/ktr_socp_post')
 
-app.post('/student_details', async (req,res)=>{
+app.post('/student_details', verify_post ,async (req,res)=>{
     try{        
         const ug1=req.body.ug1
         const ug2=req.body.ug2
@@ -24,7 +25,7 @@ app.post('/student_details', async (req,res)=>{
         const pg2=req.body.pg2
         const phdi=req.body.phdi
         const phde=req.body.phde
-        const phdf=req.body.phdf
+        const phdf=req.body.phdf   
         const totalUG=ug1+ug2+ug3+ug4
         const totalPG=pg1+pg2
         const totalPhd=phdi+phde+phdf
@@ -50,7 +51,7 @@ app.post('/student_details', async (req,res)=>{
     
 })
 
-app.get('/student_details', async (req,res)=>{
+app.get('/student_details',verify_get, async (req,res)=>{
     try{
         const data= await studDet.find()
         const data2=await campus.find({"campus_code":"1"}, (err,doc)=>{
@@ -72,7 +73,7 @@ app.get('/student_details', async (req,res)=>{
     
 })
 
-app.post('/faculty_details', async (req,res)=>{
+app.post('/faculty_details', verify_post ,async (req,res)=>{
     try{
         const data=await facultySchema.create(req.body)
         res.status(201).json({
@@ -90,7 +91,7 @@ app.post('/faculty_details', async (req,res)=>{
 
 })
 
-app.get('/faculty_details', async (req,res)=>{
+app.get('/faculty_details', verify_get ,async (req,res)=>{
     try{
         const data=await facultySchema.find()
         res.status(201).json({
@@ -108,7 +109,7 @@ app.get('/faculty_details', async (req,res)=>{
 
 })
 
-app.post('/placement_details', async (req,res)=>{
+app.post('/placement_details', verify_post ,async (req,res)=>{
     try{
         const data=await cse_placement.create(req.body)        
         res.status(201).json({
@@ -126,7 +127,7 @@ app.post('/placement_details', async (req,res)=>{
     
 })
 
-app.get('/placement_details', async (req,res)=>{
+app.get('/placement_details', verify_get ,async (req,res)=>{
     try{
         const data= await cse_placement.find()
         const data2=await campus.find({"campus_code":"1"}, (err,doc)=>{
@@ -155,7 +156,7 @@ app.get('/placement_details', async (req,res)=>{
     }
 })
 
-app.post('/higher_studies', async (req,res)=>{
+app.post('/higher_studies', verify_post, async (req,res)=>{
     try{
         const data=await higher_studies.create(req.body)
         res.status(201).json({
@@ -171,7 +172,7 @@ app.post('/higher_studies', async (req,res)=>{
     }   
 })
 
-app.get('/higher_studies', async (req,res)=>{
+app.get('/higher_studies', verify_get, async (req,res)=>{
     try {
         const data=await higher_studies.find()
         const data2=await campus.find({"campus_code":"1"}, (err,doc)=>{
@@ -200,7 +201,7 @@ app.get('/higher_studies', async (req,res)=>{
     }
 })
 
-app.post('/visitor_details', async (req,res)=>{
+app.post('/visitor_details',verify_post, async (req,res)=>{
     try {
          const data=await visitor_details.create(req.body)
          res.status(201).json({
@@ -216,7 +217,7 @@ app.post('/visitor_details', async (req,res)=>{
        } 
 })
 
-app.get('/visitor_details', async (req,res)=>{
+app.get('/visitor_details', verify_get,async (req,res)=>{
     try {
         const data=await visitor_details.find()
         const data2=await campus.find({"campus_code":"1"}, (err,doc)=>{
@@ -245,7 +246,7 @@ app.get('/visitor_details', async (req,res)=>{
 
 })
 
-app.post('/patent_details', async (req,res)=>{
+app.post('/patent_details', verify_post,async (req,res)=>{
     try {
         const data=await patent.create(req.body)
         res.status(201).json({
@@ -261,7 +262,7 @@ app.post('/patent_details', async (req,res)=>{
       } 
 })
 
-app.get('/patent_details', async (req,res)=>{
+app.get('/patent_details',verify_get ,async (req,res)=>{
     try{
         const data= await patent.find()
         const data2=await campus.find({"campus_code":"1"}, (err,doc)=>{
@@ -289,7 +290,7 @@ app.get('/patent_details', async (req,res)=>{
     }
 })
 
-app.post('/project_details', async (req,res)=>{
+app.post('/project_details',verify_post ,async (req,res)=>{
     try{
       const data=await project.create(req.body)
       res.status(201).json({
@@ -305,7 +306,7 @@ app.post('/project_details', async (req,res)=>{
     }
 })
 
-app.get('/project_details', async (req,res)=>{
+app.get('/project_details', verify_get,async (req,res)=>{
     try{
         const data=await project.find()
         const data2=await campus.find({"campus_code":"1"}, (err,doc)=>{
@@ -335,7 +336,7 @@ app.get('/project_details', async (req,res)=>{
 
 })
 
-app.post('/publication_details', async (req,res)=>{
+app.post('/publication_details', verify_post,async (req,res)=>{
     try{
         const data=await publication.create(req.body)
         res.status(201).json({
@@ -351,7 +352,7 @@ app.post('/publication_details', async (req,res)=>{
       }
 })
 
-app.get('/publication_details', async (req,res)=>{
+app.get('/publication_details', verify_get,async (req,res)=>{
     try{
         const data=await publication.find()
         const data2=await campus.find({"campus_code":"1"}, (err,doc)=>{
@@ -380,7 +381,7 @@ app.get('/publication_details', async (req,res)=>{
     }  
 })
 
-app.post('/student_activities', async (req,res)=>{
+app.post('/student_activities', verify_post ,async (req,res)=>{
     try{
         const data=await student_activity.create(req.body)
         res.status(201).json({
@@ -396,7 +397,7 @@ app.post('/student_activities', async (req,res)=>{
       }
 })
 
-app.get('/student_activities', async (req,res)=>{
+app.get('/student_activities',verify_get ,async (req,res)=>{
     try{
         const data=await student_activity.find()
         const data2=await campus.find({"campus_code":"1"}, (err,doc)=>{
@@ -425,8 +426,6 @@ app.get('/student_activities', async (req,res)=>{
     }  
 })
 
-app.get('/hod/cse/hod-cse.html', (req,res)=>{
-    res.send('working')
-})
+
 
 module.exports=app

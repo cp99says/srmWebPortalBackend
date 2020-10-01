@@ -60,7 +60,7 @@ app.post("/login", async (req, res) => {
     );
     res.header("auth-token", token).send(token);
   } catch (err) {
-    res.send(err);
+    res.send(err)
   }
 });
 

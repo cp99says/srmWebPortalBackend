@@ -5,8 +5,9 @@ module.exports=function auth(req, res, next) {
 
     try {
         const verified = jwt.verify(token, process.env.TOKEN_SECRET)    
-        if(verified.role == 'hod'){
-          next()    
+        if(verified.campus == 'ktr' && verified.school == 'school of computing' && 
+        (verified.role == 'hod' || verified.role == 'chairperson')){
+         next()
         }
         else{
             res.send('unauthorized access')
@@ -15,6 +16,7 @@ module.exports=function auth(req, res, next) {
         // console.log(verified.role)
         
     } catch(err){
+        console.log(err)
           res.status(400).send('invalid token')
     }
     
