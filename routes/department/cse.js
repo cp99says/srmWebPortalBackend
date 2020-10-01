@@ -12,6 +12,7 @@ const patent=require('./../../models/userDefined/ktr_patentDetails_socp_cse')
 const project=require('./../../models/userDefined/ktr_project_details_socp_cse')
 const publication=require('./../../models/userDefined/ktr_publicationDetails_socp_cse')
 const student_activity=require('./../../models/userDefined/ktr_studentActivities_socp_cse')
+const verify=require('./../../routes/verifyToken')
 
 app.post('/student_details', async (req,res)=>{
     try{        
@@ -395,7 +396,7 @@ app.post('/student_activities', async (req,res)=>{
       }
 })
 
-app.get('/student_activities', async (req,res)=>{
+app.get('/student_activities', verify, async (req,res)=>{
     try{
         const data=await student_activity.find()
         const data2=await campus.find({"campus_code":"1"}, (err,doc)=>{
@@ -423,4 +424,9 @@ app.get('/student_activities', async (req,res)=>{
         })
     }  
 })
+
+app.get('/hod/cse/hod-cse.html', (req,res)=>{
+    res.send('working')
+})
+
 module.exports=app

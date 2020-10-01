@@ -9,12 +9,14 @@ const placementSchema=mongoose.Schema({
     third_year:{
          eligible:{type:Number,required:true},
          internship:{type:Number,required:true},
-         placed:{type:Number,required:true}
+         placed:{type:Number,required:true},
+         higher_studies:{type:Number,required:true}
     },
     fourth_year:{
         eligible:{type:Number,required:true},
          internship:{type:Number,required:true},
-         placed:{type:Number,required:true}
+         placed:{type:Number,required:true},
+         higher_studies:{type:Number,required:true}
     }
    
 })

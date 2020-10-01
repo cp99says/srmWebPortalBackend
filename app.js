@@ -8,13 +8,13 @@ const verify=require('./routes/verifyToken')
 const cors=require('cors')
 
 
-        //     mongoose.connect(`mongodb://localhost:27017/`,{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{console.log(`db connected`)}).catch((err)=>{
-        //        console.log(err)
-        //    })
-
-            mongoose.connect(`mongodb+srv://chetan_db:chetan_pwd@cluster0.gcabm.mongodb.net/srm?retryWrites=true&w=majority`,{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{console.log(`db connected`)}).catch((err)=>{
+             mongoose.connect(`mongodb://localhost:27017/`,{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{console.log(`db connected`)}).catch((err)=>{
                 console.log(err)
             })
+
+            // mongoose.connect(`mongodb+srv://chetan_db:chetan_pwd@cluster0.gcabm.mongodb.net/srm?retryWrites=true&w=majority`,{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{console.log(`db connected`)}).catch((err)=>{
+            //     console.log(err)
+            // })
 
 app.use(express.json())
 app.use(cors())
@@ -24,7 +24,7 @@ app.use('*',cors())
 //app.use('/ktr',student_data)
 app.use('/ktr',schools)
 app.use('/reg',register)
-app.get('/access_data', verify, (req,res)=>{
+app.get('/access_data', verify, (req,res)=>{    
     res.send('passed after next function')
 })
 // app.use('/rpm')
@@ -34,6 +34,3 @@ app.get('/access_data', verify, (req,res)=>{
 
 const port=process.env.PORT || 3000
 app.listen(port,(()=>{console.log(`server started at port : ${port}`)}))
-
-// const port = process.env.PORT || 3500
-// app.listen(port, (() => { console.log('server started at port 3500') }))

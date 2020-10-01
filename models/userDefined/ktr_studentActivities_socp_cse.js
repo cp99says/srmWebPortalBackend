@@ -7,7 +7,8 @@ const studentActivities=mongoose.Schema({
     date:{type:String,default:a,required:true}, 
     hackathon:{
         participated:{type:Number,required:true},
-        won:{type:Number,required:true}
+        won:{type:Number,required:true},
+        total_cash_prize:{type:Number,required:true}
     },
     awards:{
         international:{type:Number,required:true},
