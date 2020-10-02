@@ -7,6 +7,7 @@ module.exports=function auth(req, res, next) {
         const verified = jwt.verify(token, process.env.TOKEN_SECRET)    
         if(verified.campus == 'ktr' && verified.school == 'school of computing' && 
         (verified.role == 'hod' || verified.role == 'chairperson')){
+         //res.status(201).json(verified)
          next()
         }
         else{

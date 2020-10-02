@@ -58,7 +58,19 @@ app.post("/login", async (req, res) => {
       },
       process.env.TOKEN_SECRET
     );
-    res.header("auth-token", token).send(token);
+    const verified = jwt.verify(token, process.env.TOKEN_SECRET)
+    verified1=JSON.stringify(verified)    
+    if(verified.campus == 'ktr' && verified.school == 'school of computing' && 
+    (verified.role == 'hod' || verified.role == 'chairperson')){
+     res.status(201).json({ auth_token: token,verified })
+     
+    }
+    else{
+        res.send('unauthorized access')
+    }
+
+
+    //res.header("auth-token", token).json(token)
   } catch (err) {
     res.send(err)
   }
