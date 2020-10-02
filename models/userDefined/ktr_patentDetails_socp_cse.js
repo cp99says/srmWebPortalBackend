@@ -11,16 +11,17 @@ const patent=mongosose.Schema({
         required:true
       },
     patents_filed:{
-        type:Number,
-        required:true
+        target:{type:Number,required:true},
+        actual:{type:Number,required:true}
+        
     },
     patents_published:{
-        type:Number,
-        required:true
+        target:{type:Number,required:true},
+        actual:{type:Number,required:true}
     },
     patents_granted:{
-        type:Number,
-        required:true
+        target:{type:Number,required:true},
+        actual:{type:Number,required:true}
     }
     
 })

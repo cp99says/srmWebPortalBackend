@@ -5,8 +5,14 @@ var a=date.toDateString()
 
 const publication_schema=mongoose.Schema({
     date:{type:String,default:a,required:true}, 
-    papers_in_scopus:{type:Number,required:true},
-      papers_in_sci:{type:Number,required:true},
+    papers_in_scopus:{
+      target:{type:Number,required:true},
+      actual:{type:Number,required:true}
+    },
+      papers_in_sci:{
+        target:{type:Number,required:true},
+        actual:{type:Number,required:true}
+      },
       highest_impact_factor:{type:Number,required:true}
 })
 

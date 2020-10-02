@@ -9,7 +9,7 @@ const visDetails=mongoose.Schema({
         default:a,
         required:true
       },
-    foreign_professors:{
+    academicians:{
         visited_campus:{type:Number,required:true},
         online:{type:Number,required:true}
     },
