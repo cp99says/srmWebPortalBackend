@@ -13,19 +13,23 @@ const projectSchema=mongoose.Schema({
         completed:{type:Number,required:true},
         amount_received:{type:Number,required:true}
     },
-    consultancy_projects:{
+     consultancy_projects:{
         target:{type:Number,required:true},
-        applied:{type:Number,required:true},
+         applied:{type:Number,required:true},
         ongoing:{type:Number,required:true},
         completed:{type:Number,required:true},
         amount_received:{type:Number,required:true}
-    },
+     },
     inhouse_projects:{
         target:{type:Number,required:true},
         applied:{type:Number,required:true},
         ongoing:{type:Number,required:true},
         completed:{type:Number,required:true},
         amount_received:{type:Number,required:true}
+    },
+    file:{
+        type:String,
+        required:true
     }
     
 })

@@ -44,7 +44,11 @@ const studentDetails_schema=mongoose.Schema({
     phdf:{
         type:Number,
         required:true
-    }
+    },
+       file:{
+           type:String,
+           required:true
+       }
 
 
 })

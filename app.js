@@ -6,11 +6,11 @@ const register=require('./routes/registration')
 const verify=require('./routes/ktr_socp_get')
 //const student_data=require('./routes/socp/student_data')
 const cors=require('cors')
+app.use(express.static("public"));
 
-
-            //    mongoose.connect(`mongodb://localhost:27017/`,{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{console.log(`db connected`)}).catch((err)=>{
-            //       console.log(err)
-            //   })
+            //     mongoose.connect(`mongodb://localhost:27017/`,{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{console.log(`db connected`)}).catch((err)=>{
+            //        console.log(err)
+            //    })
 
                mongoose.connect(`mongodb+srv://chetan_db:chetan_pwd@cluster0.gcabm.mongodb.net/srm?retryWrites=true&w=majority`,{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{console.log(`db connected`)}).catch((err)=>{
                    console.log(err)

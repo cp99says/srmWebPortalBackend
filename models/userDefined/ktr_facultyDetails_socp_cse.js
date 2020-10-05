@@ -27,6 +27,10 @@ const ktr_facultyDetailsSchema=mongoose.Schema({
     apWithoutPhd:{
         type:Number,
         required:true
+    },
+    file:{
+        type:String,
+        required:true
     }
 })
 

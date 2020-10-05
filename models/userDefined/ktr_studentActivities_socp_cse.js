@@ -17,6 +17,10 @@ const studentActivities=mongoose.Schema({
     internship:{
         with_stipend:{type:Number,required:true},
         without_stipend:{type:Number,required:true}
+    },
+    file:{
+        type:String,
+        required:true
     }
 
 })

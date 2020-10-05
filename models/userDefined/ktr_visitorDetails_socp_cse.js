@@ -20,7 +20,16 @@ const visDetails=mongoose.Schema({
     industrialists:{
         visited_campus:{type:Number,required:true},
         online:{type:Number,required:true}
+    },
+    file:{
+        type:String,
+        required:true
     }
 })
 
 module.exports=mongoose.model('ktr_visitor_details_socp_cse',visDetails)
+
+
+
+
+

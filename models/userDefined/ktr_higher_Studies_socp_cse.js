@@ -9,20 +9,16 @@ const schema=mongoose.Schema({
         type:String,      
         default:a,
         required:true
-      },
-        month:{
-            type:String,
-            required:true
-        },
-        year:{
-            type:String,
-            required:true
-        },
+      },       
         students_went_for_higher_studies:{
             type:Number,
             required:true
         },
         universityName:{
+            type:Number,
+            required:true
+        },
+        file:{
             type:String,
             required:true
         }
