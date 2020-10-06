@@ -22,8 +22,7 @@ const visDetails=mongoose.Schema({
         online:{type:Number,required:true}
     },
     file:{
-        type:String,
-        required:true
+        type:String
     }
 })
 

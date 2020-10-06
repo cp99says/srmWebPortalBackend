@@ -19,8 +19,7 @@ const studentActivities=mongoose.Schema({
         without_stipend:{type:Number,required:true}
     },
     file:{
-        type:String,
-        required:true
+        type:String
     }
 
 })

@@ -19,8 +19,7 @@ const placementSchema=mongoose.Schema({
          higher_studies:{type:Number,required:true}
     },
     file:{
-        type:String,
-        required:true
+        type:String
     }
    
 })

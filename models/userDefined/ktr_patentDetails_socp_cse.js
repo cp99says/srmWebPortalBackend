@@ -24,8 +24,7 @@ const patent=mongosose.Schema({
         actual:{type:Number,required:true}
     },
     file:{
-        type:String,
-        required:true
+        type:String
     }
     
 })

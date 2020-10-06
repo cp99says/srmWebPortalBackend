@@ -28,8 +28,7 @@ const projectSchema=mongoose.Schema({
         amount_received:{type:Number,required:true}
     },
     file:{
-        type:String,
-        required:true
+        type:String
     }
     
 })

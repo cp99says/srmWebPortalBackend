@@ -29,8 +29,7 @@ const ktr_facultyDetailsSchema=mongoose.Schema({
         required:true
     },
     file:{
-        type:String,
-        required:true
+        type:String
     }
 })
 

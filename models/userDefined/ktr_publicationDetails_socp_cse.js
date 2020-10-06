@@ -15,8 +15,7 @@ const publication_schema=mongoose.Schema({
       },
       highest_impact_factor:{type:Number,required:true},
       file:{
-        type:String,
-        required:true
+        type:Strings
     }
 })
 
