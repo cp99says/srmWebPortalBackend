@@ -8,9 +8,9 @@ module.exports = function auth(req, res, next) {
     if (
       verified.campus == "ktr" &&
       verified.school == "school of computing" &&
-      (verified.role == "hod" || verified.role == "chairperson")
+      verified.department == "it" &&
+      verified.role == "hod"
     ) {
-      //res.status(201).json(verified)
       next();
     } else {
       res.send("unauthorized access");
