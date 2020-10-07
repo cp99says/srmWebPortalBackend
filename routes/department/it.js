@@ -784,7 +784,7 @@ app.get("/student_activities", verify_get, async (req, res) => {
   try {
     const data = await student_activity.find();
     const data2 = await campus.find({ campus_code: "1" });
-    const data3 = await dept.find({ dept_code: "1" });
+    const data3 = await dept.find({ dept_code: "2" });
     const data4 = await school.find({ school_code: "7" });
     res.status(201).json({
       message: "success",
