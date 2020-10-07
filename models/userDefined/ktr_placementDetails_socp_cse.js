@@ -17,6 +17,7 @@ const placementSchema = mongoose.Schema({
     placed: { type: Number, required: true },
     higher_studies: { type: Number, required: true },
   },
+  email: { type: String, required: true },
   file: {
     type: String,
   },

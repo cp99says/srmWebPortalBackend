@@ -44,6 +44,7 @@ app.post("/image", (req, res) => {
         phdi: req.body.phdi,
         phde: req.body.phde,
         phdf: req.body.phdf,
+        email: req.body.email,
         //file: original,
       });
 
@@ -102,6 +103,7 @@ app.post("/student_details", verify_post, (req, res) => {
         phdi: req.body.phdi,
         phde: req.body.phde,
         phdf: req.body.phdf,
+        email: req.body.email,
         //file: original,
       });
 
@@ -129,6 +131,7 @@ app.post("/student_details", verify_post, (req, res) => {
         phdi: req.body.phdi,
         phde: req.body.phde,
         phdf: req.body.phdf,
+        email: req.body.email,
         file: original,
       });
       try {
@@ -176,6 +179,7 @@ app.post("/faculty_details", verify_post, (req, res) => {
         assProfs: req.body.profs,
         apWithPhd: req.body.apWithPhd,
         apWithoutPhd: req.body.apWithoutPhd,
+        email: req.body.email,
         //file: original,
       });
 
@@ -200,6 +204,7 @@ app.post("/faculty_details", verify_post, (req, res) => {
         assProfs: req.body.profs,
         apWithPhd: req.body.apWithPhd,
         apWithoutPhd: req.body.apWithoutPhd,
+        email: req.body.email,
         file: original,
       });
 
@@ -255,6 +260,7 @@ app.post("/placement_details", verify_post, (req, res) => {
           placed: req.body.fourth_year.placed,
           higher_studies: req.body.fourth_year.higher_studies,
         },
+        email: req.body.email,
         //file: original,
       });
 
@@ -286,6 +292,7 @@ app.post("/placement_details", verify_post, (req, res) => {
           placed: req.body.fourth_year.placed,
           higher_studies: req.body.fourth_year.higher_studies,
         },
+        email: req.body.email,
         file: original,
       });
 
@@ -339,6 +346,7 @@ app.post("/higher_studies", verify_post, (req, res) => {
         students_went_for_higher_studies:
           req.body.students_went_for_higher_studies,
         universityName: req.body.universityName,
+        email: req.body.email,
         //file: original,
       });
 
@@ -361,6 +369,7 @@ app.post("/higher_studies", verify_post, (req, res) => {
         students_went_for_higher_studies:
           req.body.students_went_for_higher_studies,
         universityName: req.body.universityName,
+        email: req.body.email,
         file: original,
       });
 
@@ -416,6 +425,7 @@ app.post("/visitor_details", verify_post, (req, res) => {
           visited_campus: req.body.industrialists.visited_campus,
           online: req.body.industrialists.online,
         },
+        email: req.body.email,
         //file: original,
       });
 
@@ -447,6 +457,7 @@ app.post("/visitor_details", verify_post, (req, res) => {
           visited_campus: req.body.industrialists.visited_campus,
           online: req.body.industrialists.online,
         },
+        email: req.body.email,
         file: original,
       });
 
@@ -502,6 +513,7 @@ app.post("/patent_details", verify_post, (req, res) => {
           target: req.body.patents_granted.target,
           actual: req.body.patents_granted.actual,
         },
+        email: req.body.email,
         //file: original,
       });
 
@@ -533,6 +545,7 @@ app.post("/patent_details", verify_post, (req, res) => {
           target: req.body.patents_granted.target,
           actual: req.body.patents_granted.actual,
         },
+        email: req.body.email,
         file: original,
       });
 
@@ -597,6 +610,7 @@ app.post("/project_details", verify_post, (req, res) => {
           completed: req.body.inhouse_projects.completed,
           amount_received: req.body.inhouse_projects.amount_received,
         },
+        email: req.body.email,
         //file: original,
       });
 
@@ -637,6 +651,7 @@ app.post("/project_details", verify_post, (req, res) => {
           completed: req.body.inhouse_projects.completed,
           amount_received: req.body.inhouse_projects.amount_received,
         },
+        email: req.body.email,
         file: original,
       });
 
@@ -689,6 +704,7 @@ app.post("/publication_details", verify_post, (req, res) => {
           actual: req.body.papers_in_sci.actual,
         },
         highest_impact_factor: req.body.highest_impact_factor,
+        email: req.body.email,
         //file: original,
       });
 
@@ -717,6 +733,7 @@ app.post("/publication_details", verify_post, (req, res) => {
           actual: req.body.papers_in_sci.actual,
         },
         highest_impact_factor: req.body.highest_impact_factor,
+        email: req.body.email,
         file: original,
       });
 
@@ -773,6 +790,7 @@ app.post("/student_activities", verify_post, (req, res) => {
           with_stipend: req.body.internship.with_stipend,
           without_stipend: req.body.internship.without_stipend,
         },
+        email: req.body.email,
         //file: original,
       });
 
@@ -805,6 +823,7 @@ app.post("/student_activities", verify_post, (req, res) => {
           with_stipend: req.body.internship.with_stipend,
           without_stipend: req.body.internship.without_stipend,
         },
+        email: req.body.email,
         file: original,
       });
 

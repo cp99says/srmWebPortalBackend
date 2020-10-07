@@ -26,6 +26,7 @@ const projectSchema = mongoose.Schema({
     completed: { type: Number, required: true },
     amount_received: { type: Number, required: true },
   },
+  email: { type: String, required: true },
   file: {
     type: String,
   },
