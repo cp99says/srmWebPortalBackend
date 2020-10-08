@@ -46,7 +46,6 @@ app.post("/student_details", verify_post, (req, res) => {
         email: req.body.email,
         //file: original,
       });
-
       try {
         const data = await a.save();
         res.status(201).json(data);
