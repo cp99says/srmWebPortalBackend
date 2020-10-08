@@ -72,6 +72,7 @@ app.post("/image", (req, res) => {
         phdi: req.body.phdi,
         phde: req.body.phde,
         phdf: req.body.phdf,
+        email: req.body.email,
         file: original,
       });
 
