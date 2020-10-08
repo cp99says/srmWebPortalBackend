@@ -10,12 +10,14 @@ const placementSchema = mongoose.Schema({
     internship: { type: Number, required: true },
     placed: { type: Number, required: true },
     higher_studies: { type: Number, required: true },
+    interested: { type: Number, required: true },
   },
   fourth_year: {
     eligible: { type: Number, required: true },
     internship: { type: Number, required: true },
     placed: { type: Number, required: true },
     higher_studies: { type: Number, required: true },
+    interested: { type: Number, required: true },
   },
   email: { type: String, required: true },
   file: {

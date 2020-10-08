@@ -191,13 +191,16 @@ app.post("/placement_details", verify_post, (req, res) => {
           internship: req.body.third_year.internship,
           placed: req.body.third_year.placed,
           higher_studies: req.body.third_year.higher_studies,
+          interested: req.body.third_year.interested,
         },
         fourth_year: {
           eligible: req.body.fourth_year.eligible,
           internship: req.body.fourth_year.internship,
           placed: req.body.fourth_year.placed,
           higher_studies: req.body.fourth_year.higher_studies,
+          interested: req.body.fourth_year.interested,
         },
+
         email: req.body.email,
         //file: original,
       });
@@ -223,12 +226,14 @@ app.post("/placement_details", verify_post, (req, res) => {
           internship: req.body.third_year.internship,
           placed: req.body.third_year.placed,
           higher_studies: req.body.third_year.higher_studies,
+          interested: req.body.third_year.interested,
         },
         fourth_year: {
           eligible: req.body.fourth_year.eligible,
           internship: req.body.fourth_year.internship,
           placed: req.body.fourth_year.placed,
           higher_studies: req.body.fourth_year.higher_studies,
+          interested: req.body.fourth_year.interested,
         },
         email: req.body.email,
         file: original,
