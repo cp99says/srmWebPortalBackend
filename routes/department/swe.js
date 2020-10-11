@@ -89,7 +89,7 @@ app.get("/student_details", verify_get, async (req, res) => {
   try {
     const data = await swe_schema.find();
     const data2 = await campus.find({ campus_code: "1" });
-    const data3 = await dept.find({ dept_code: "2" });
+    const data3 = await dept.find({ dept_code: "3" });
     const data4 = await school.find({ school_code: "7" });
     res.status(201).json({
       message: "success",
@@ -163,7 +163,7 @@ app.get("/faculty_details", verify_get, async (req, res) => {
   try {
     const data = await facultySchema.find();
     const data2 = await campus.find({ campus_code: "1" });
-    const data3 = await dept.find({ dept_code: "2" });
+    const data3 = await dept.find({ dept_code: "3" });
     const data4 = await school.find({ school_code: "7" });
     res.status(201).json({
       message: "success",
@@ -258,7 +258,7 @@ app.get("/placement_details", verify_get, async (req, res) => {
     const data2 = await campus.find({ campus_code: "1" }, (err, doc) => {
       // console.log(doc)
     });
-    const data3 = await dept.find({ dept_code: "2" }, (err, doc) => {
+    const data3 = await dept.find({ dept_code: "3" }, (err, doc) => {
       // console.log(doc)
     });
     const data4 = await school.find({ school_code: "7" }, (err, doc) => {
@@ -333,7 +333,7 @@ app.get("/higher_studies", verify_get, async (req, res) => {
   try {
     const data = await higher_studies.find();
     const data2 = await campus.find({ campus_code: "1" });
-    const data3 = await dept.find({ dept_code: "2" });
+    const data3 = await dept.find({ dept_code: "3" });
     const data4 = await school.find({ school_code: "7" });
     res.status(201).json({
       message: "success",
@@ -421,7 +421,7 @@ app.get("/visitor_details", verify_get, async (req, res) => {
   try {
     const data = await visitor_details.find();
     const data2 = await campus.find({ campus_code: "1" });
-    const data3 = await dept.find({ dept_code: "2" });
+    const data3 = await dept.find({ dept_code: "3" });
     const data4 = await school.find({ school_code: "7" });
     res.status(201).json({
       message: "success",
@@ -509,7 +509,7 @@ app.get("/patent_details", verify_get, async (req, res) => {
   try {
     const data = await patent.find();
     const data2 = await campus.find({ campus_code: "1" });
-    const data3 = await dept.find({ dept_code: "2" });
+    const data3 = await dept.find({ dept_code: "3" });
     const data4 = await school.find({ school_code: "7" });
     res.status(201).json({
       message: "success",
@@ -615,7 +615,7 @@ app.get("/project_details", verify_get, async (req, res) => {
   try {
     const data = await project.find();
     const data2 = await campus.find({ campus_code: "1" });
-    const data3 = await dept.find({ dept_code: "2" });
+    const data3 = await dept.find({ dept_code: "3" });
     const data4 = await school.find({ school_code: "7" });
     res.status(201).json({
       message: "success",
@@ -697,7 +697,7 @@ app.get("/publication_details", verify_get, async (req, res) => {
   try {
     const data = await publication.find();
     const data2 = await campus.find({ campus_code: "1" });
-    const data3 = await dept.find({ dept_code: "2" });
+    const data3 = await dept.find({ dept_code: "3" });
     const data4 = await school.find({ school_code: "7" });
     res.status(201).json({
       message: "success",
@@ -787,7 +787,7 @@ app.get("/student_activities", verify_get, async (req, res) => {
   try {
     const data = await student_activity.find();
     const data2 = await campus.find({ campus_code: "1" });
-    const data3 = await dept.find({ dept_code: "2" });
+    const data3 = await dept.find({ dept_code: "3" });
     const data4 = await school.find({ school_code: "7" });
     res.status(201).json({
       message: "success",
