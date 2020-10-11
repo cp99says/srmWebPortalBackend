@@ -14,7 +14,7 @@ app.post("/register", async (req, res) => {
     department: req.body.department,
     email: req.body.email,
     password: hashedPassword,
-    role:req.body.role
+    role: req.body.role,
   });
 
   try {
@@ -33,7 +33,7 @@ app.post("/login", async (req, res) => {
     });
 
   try {
-    const a = await reg_model.findOne({ email: req.body.email });    
+    const a = await reg_model.findOne({ email: req.body.email });
     if (a == null)
       res.status(404).json({
         status: "failure",
@@ -54,25 +54,25 @@ app.post("/login", async (req, res) => {
         school: a.school,
         department: a.department,
         email: a.email,
-        role:a.role
+        role: a.role,
       },
       process.env.TOKEN_SECRET
     );
-    const verified = jwt.verify(token, process.env.TOKEN_SECRET)
-    verified1=JSON.stringify(verified)    
-    if(verified.campus == 'ktr' && verified.school == 'school of computing' && 
-    (verified.role == 'hod' || verified.role == 'chairperson')){
-     res.status(201).json({ auth_token: token,verified })
-     
+    const verified = jwt.verify(token, process.env.TOKEN_SECRET);
+    verified1 = JSON.stringify(verified);
+    if (
+      verified.campus == "ktr" &&
+      verified.school == "school of computing" &&
+      (verified.role == "hod" || verified.role == "chairperson")
+    ) {
+      res.status(201).json({ auth_token: token, verified });
+    } else {
+      res.send("unauthorized access");
     }
-    else{
-        res.send('unauthorized access')
-    }
-
 
     //res.header("auth-token", token).json(token)
   } catch (err) {
-    res.send(err)
+    res.send(err);
   }
 });
 
