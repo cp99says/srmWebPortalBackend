@@ -100,7 +100,7 @@ app.get("/student_details", verify_get, async (req, res) => {
     });
   } catch (err) {
     res.status(401).json({
-      message: "failure",
+      message: "fail",
       err,
     });
   }
