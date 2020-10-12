@@ -307,7 +307,7 @@ app.post("/placement_details", verify_post, (req, res) => {
       } catch (err) {
         console.log(err);
         res.status(401).json({
-          message: "failure",
+          message: "fail",
           err,
         });
       }
