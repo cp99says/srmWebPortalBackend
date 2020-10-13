@@ -12,6 +12,7 @@ app.use(express.static("public"));
 //   .connect(`mongodb://localhost:27017/`, {
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true,
+//     useFindAndModify: false,
 //   })
 //   .then(() => {
 //     console.log(`db connected`);
@@ -23,7 +24,7 @@ app.use(express.static("public"));
 mongoose
   .connect(
     `mongodb+srv://chetan_db:chetan_pwd@cluster0.gcabm.mongodb.net/srm?retryWrites=true&w=majority`,
-    { useNewUrlParser: true, useUnifiedTopology: true }
+    { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
   )
   .then(() => {
     console.log(`db connected`);

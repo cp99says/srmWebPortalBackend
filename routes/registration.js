@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 require("dotenv/config");
 const reg_model = require("../registrationModel/registration_model");
+const { findOneAndUpdate } = require("../registrationModel/registration_model");
 
 app.post("/register", async (req, res) => {
   const salt = await bcrypt.genSalt(10);
@@ -76,6 +77,17 @@ app.post("/login", async (req, res) => {
   }
 });
 
-//app.patch('/')
+app.patch("/change", async (req, res) => {
+  const email = req.body.email;
+  const newPassword = req.body.password;
+  const salt = await bcrypt.genSalt(10);
+  const newHashedPassword = await bcrypt.hash(newPassword, salt);
+  const a = await reg_model.findOneAndUpdate(
+    { email },
+    { password: newHashedPassword },
+    { new: true }
+  );
+  res.json(a);
+});
 
 module.exports = app;
