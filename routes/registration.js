@@ -62,9 +62,11 @@ app.post("/login", async (req, res) => {
     const verified = jwt.verify(token, process.env.TOKEN_SECRET);
     verified1 = JSON.stringify(verified);
     if (
-      verified.campus == "ktr" &&
-      verified.school == "school of computing" &&
-      (verified.role == "hod" || verified.role == "chairperson")
+      (verified.campus == "ktr" || verified.campus == "all") &&
+      (verified.school == "school of computing" || verified.school == "all") &&
+      (verified.role == "hod" ||
+        verified.role == "chairperson" ||
+        verified.role == "all")
     ) {
       res.status(201).json({ auth_token: token, verified });
     } else {

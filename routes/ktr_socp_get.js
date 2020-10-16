@@ -6,17 +6,16 @@ module.exports = function auth(req, res, next) {
   try {
     const verified = jwt.verify(token, process.env.TOKEN_SECRET);
     if (
-      verified.campus == "ktr" &&
-      verified.school == "school of computing" &&
-      (verified.role == "hod" || verified.role == "chairperson")
+      (verified.campus == "ktr" || verified.campus == "all") &&
+      (verified.school == "school of computing" || verified.school == "all") &&
+      (verified.role == "hod" ||
+        verified.role == "chairperson" ||
+        verified.role == "all")
     ) {
-      //res.status(201).json(verified)
       next();
     } else {
       res.send("unauthorized access");
     }
-    // res.status(201).json(verified)
-    // console.log(verified.role)
   } catch (err) {
     console.log(err);
     res.status(400).send("invalid token");
