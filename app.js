@@ -23,7 +23,7 @@ app.use(express.static("public"));
 
 mongoose
   .connect(
-    `mongodb+srv://chetan_db:chetan_pwd@cluster0.gcabm.mongodb.net/srm?retryWrites=true&w=majority`,
+    process.env.mongo,
     { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
   )
   .then(() => {
